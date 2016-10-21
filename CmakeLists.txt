@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(pdcex)
+
+
+include_directories(source)
+
+set(LIBS_PATH "${CMAKE_CURRENT_SOURCE_DIR}/libs")
+
+include_directories("${LIBS_PATH}/include")
+include_directories("${LIBS_PATH}/include/pdcurses")
+
+IF(UNIX)
+    set(CMAKE_CXX_FLAGS "-std=c++11")
+
+    link_directories("${LIBS_PATH}/unix/pdcurses/")
+
+    add_executable (pdce0 source/pdce0.c)
+    add_executable (pdce1 source/pdce1.c)
+    add_executable (pdce2 source/pdce2.c)
+    add_executable (pdce3 source/pdce3.c)
+
+    target_link_libraries(pdce0 m)
+    target_link_libraries(pdce1 m)
+    target_link_libraries(pdce2 m)
+    target_link_libraries(pdce3 m)
+
+ELSE (WIN32)
+    link_directories("${LIBS_PATH}/windows/pdcurses/")
+
+    add_executable (pdce0 source/pdce0.c)
+    add_executable (pdce1 source/pdce1.c)
+    add_executable (pdce2 source/pdce2.c)
+    add_executable (pdce3 source/pdce3.c)
+
+    target_link_libraries(pdce0 pdcurses.lib)
+    target_link_libraries(pdce1 pdcurses.lib)
+    target_link_libraries(pdce2 pdcurses.lib)
+    target_link_libraries(pdce3 pdcurses.lib)
+
+ENDIF (UNIX)
+
+set(CMAKE_BUILD_TYPE Debug)
