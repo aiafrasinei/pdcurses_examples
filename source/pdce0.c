@@ -1,7 +1,7 @@
 #include <curses.h>
 
 
-/* hello world - initialize a curses */
+/* hello world, initialize curses */
 int main(int argc, char *argv)
 {
 	WINDOW *local_win;	

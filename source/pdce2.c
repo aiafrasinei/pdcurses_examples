@@ -1,6 +1,6 @@
 #include <curses.h>
 
-
+/* keyboard usage */
 int main(int argc, char *argv)
 {
     int ch;

@@ -1,36 +1,22 @@
 #include <curses.h>
 
-WINDOW *create_newwin(int height, int width, int starty, int startx)
-{	WINDOW *local_win;
-
-	local_win = newwin(height, width, starty, startx);
-	wborder(local_win, '|', '|', '-', '-', '+', '+', '+', '+');
-	wrefresh(local_win);		/* Show that box 		*/
-
-	return local_win;
-}
-
-void destroy_win(WINDOW *local_win)
-{	
-	wborder(local_win, ' ', ' ', ' ',' ',' ',' ',' ',' ');
-	wrefresh(local_win);
-	delwin(local_win);
-}
-
+/* output functions */
 int main(int argc, char *argv)
 {
-	WINDOW *local_win;	
 	initscr();
-	start_color();
-	init_pair(1, COLOR_RED, COLOR_BLACK);
-	attron(COLOR_PAIR(1));
-	printw("Hello World !!!");
-	attroff(COLOR_PAIR(1));
-    mvaddstr(6, 32, "Test");
+    
+	move(10, 10);
+	addch('A');
+
+	mvaddch(20, 20, 'B');
+	mvaddstr(20, 50, "This is a string");
+
+
+	char *test = "test";
+	int testi = 1;
+	mvprintw(0, 60, "Screen %s %d", test, testi);
+
 	refresh();
-	local_win = create_newwin(10, 15, 5, 5);
-	getch();
-	destroy_win(local_win);
 	getch();
 	endwin();
 

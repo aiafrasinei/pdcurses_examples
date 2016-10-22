@@ -1,9 +1,8 @@
 #include <curses.h>
 
-
+/* colors */
 int main(int argc, char *argv)
 {
-	WINDOW *local_win;	
 	initscr();
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_BLACK);
