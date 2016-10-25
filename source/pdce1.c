@@ -1,7 +1,8 @@
 #include <curses.h>
 
+
 /* colors */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	initscr();
 	start_color();

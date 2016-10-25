@@ -1,7 +1,8 @@
 #include <curses.h>
 
+
 /* roguelike char */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
     int ch;
 	char playerc = '@';
@@ -13,7 +14,6 @@ int main(int argc, char *argv)
 	initscr();
 	keypad(stdscr, TRUE);
     noecho();
-	//raw();
 	curs_set(FALSE);
 
 	mvaddch(y, x, playerc);
@@ -23,21 +23,37 @@ int main(int argc, char *argv)
 		
 		ch = getch();
 		if(ch == KEY_LEFT) {
+			if(x <= 0) {
+				continue;
+			}
+
 			mvaddch(y, x, emptyc);
 			x--;
 			mvaddch(y, x, playerc);
 		}
 		else if(ch == KEY_RIGHT) {
+			if(x >= mx - 1) {
+				continue;
+			}
+
 			mvaddch(y, x, emptyc);
-			echochar('@');
+			echochar(playerc);
 			x++;
 		}
 		else if(ch == KEY_UP) {
+			if(y <= 0) {
+				continue;
+			}
+
 			mvaddch(y, x, emptyc);
 			y--;
 			mvaddch(y, x, playerc);
 		}
 		else if(ch == KEY_DOWN) {
+			if(y >= my - 1) {
+				continue;
+			}
+
 			mvaddch(y, x, emptyc);
 			y++;
 			mvaddch(y, x, playerc);

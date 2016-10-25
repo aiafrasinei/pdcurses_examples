@@ -1,7 +1,8 @@
 #include <curses.h>
 
+
 /* window resize */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	int row, col;
 

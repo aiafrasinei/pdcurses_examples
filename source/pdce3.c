@@ -1,7 +1,8 @@
 #include <curses.h>
 
+
 /* output functions */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	initscr();
     

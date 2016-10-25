@@ -1,5 +1,6 @@
 #include <curses.h>
 
+
 WINDOW *create_newwin(int height, int width, int starty, int startx)
 {	WINDOW *local_win;
 
@@ -17,7 +18,7 @@ void destroy_win(WINDOW *local_win)
 }
 
 /* creating windows */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	WINDOW *local_win;	
 	initscr();

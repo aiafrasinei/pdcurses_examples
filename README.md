@@ -11,3 +11,4 @@ Examples:
  - 4 - window resize
  - 5 - creating windows 
  - 6 - roguelike character
+ - 7 - scan functions
