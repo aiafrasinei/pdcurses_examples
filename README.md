@@ -12,3 +12,5 @@ Examples:
  - 5 - creating windows 
  - 6 - roguelike character
  - 7 - scan functions
+ - 8 - mvchgat
+ - 9 - some kind of menu
