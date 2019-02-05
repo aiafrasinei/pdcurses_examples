@@ -22,3 +22,6 @@ Examples:
  - 8 - mvchgat
  - 9 - some kind of menu
  - 10 - screen dump/restore
+ - 11 - ASC variables , extended encoding
+ - 12 - ascii art
+ - 13 - drawing lines, rectangles
