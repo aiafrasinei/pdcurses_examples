@@ -1,6 +1,13 @@
 # pdcurses_examples
 
-To build (cmake . then cmake --build .)
+To build:
+
+windows:
+    cmake -G "Visual Studio 15 2017 Win64" .
+linux:
+    cmake .
+
+cmake --build .
 
 Examples:
 
@@ -14,3 +21,4 @@ Examples:
  - 7 - scan functions
  - 8 - mvchgat
  - 9 - some kind of menu
+ - 10 - screen dump/restore
