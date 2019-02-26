@@ -24,3 +24,4 @@ Examples:
  - 11 - ASC variables , extended encoding
  - 12 - ascii art
  - 13 - drawing lines, rectangles
+ - 14 - mouse usage
