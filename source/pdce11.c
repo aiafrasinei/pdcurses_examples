@@ -1,9 +1,11 @@
 #include <curses.h>
+#include <locale.h>
 
 
 /* hello world, initialize curses */
 int main(int argc, char *argv[])
 {
+    setlocale(LC_ALL, "");
 	initscr();
 
     printw("Upper left corner           "); addch(ACS_ULCORNER); printw("\n"); 

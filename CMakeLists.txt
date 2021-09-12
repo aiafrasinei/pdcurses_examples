@@ -7,9 +7,6 @@ include_directories(source)
 
 set(LIBS_PATH "${CMAKE_CURRENT_SOURCE_DIR}/libs")
 
-include_directories("${LIBS_PATH}/include")
-include_directories("${LIBS_PATH}/include/pdcurses")
-
 
 IF(UNIX)
     set(CMAKE_CXX_FLAGS "-std=c++17")
@@ -17,6 +14,9 @@ IF(UNIX)
     link_directories("${LIBS_PATH}/unix/pdcurses/")
 ELSE (WIN32)
     set(CMAKE_CXX_FLAGS "/std:c++latest")
+
+    include_directories("${LIBS_PATH}/include")
+    include_directories("${LIBS_PATH}/include/pdcurses")
 
     link_directories("${LIBS_PATH}/windows/pdcurses/")
 ENDIF (UNIX)
@@ -49,7 +49,7 @@ IF(UNIX)
     target_link_libraries(pdce8 m ncurses)
     target_link_libraries(pdce9 m ncurses)
     target_link_libraries(pdce10 m ncurses)
-    target_link_libraries(pdce11 m ncurses)
+    target_link_libraries(pdce11 m ncursesw)
     target_link_libraries(pdce12 m ncurses)
     target_link_libraries(pdce13 m ncurses)
     target_link_libraries(pdce14 m ncurses)
